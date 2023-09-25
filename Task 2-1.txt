@@ -1,0 +1,66 @@
+Hello John,
+
+Thank you for reaching out with your request. I'd be happy to assist you in achieving the desired functionality for your dropdown menu.
+Pleae follow the next steps to get the desire functionality.
+
+Step 1. Copy and paste the follwoing code in your "CountryDropdown.razor" replaceing the existing code you have now.
+
+<!-- CountryDropdown.razor -->
+<div class="country-dropdown" @onclick="ToggleDropdown">
+    @if (!showDropdown)
+    {
+        <img src="@selectedCountry.FlagUrl" alt="@selectedCountry.Name" class="selected-country-flag" />
+    }
+    @if (showDropdown)
+    {
+        <div class="dropdown">
+            @foreach (var country in countries)
+            {
+                <div @onclick="() => SelectCountry(country)" class="country-option">
+                    <img src="@country.FlagUrl" alt="@country.Name" class="option-flag" />
+                    <span>@country.Name</span>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private List<Country> countries; // Populate this with your country data
+    private Country selectedCountry;
+    private bool showDropdown;
+
+    private void ToggleDropdown()
+    {
+        showDropdown = !showDropdown;
+    }
+
+    private void SelectCountry(Country country)
+    {
+        selectedCountry = country;
+        showDropdown = false;
+    }
+}
+
+Step 2. To populate the data in you CountryDropdown List you can do the following.
+    private List<Country> countries;
+
+    private string selectedCountry;
+
+    public CountryDropdown()
+    {
+        countries = new List<Country>
+        {
+            new Country { Name = "United States", FlagUrl = "https://example.com/us-flag.png" },
+            new Country { Name = "Canada", FlagUrl = "https://example.com/ca-flag.png" },
+            // Add more countries here
+        };
+    }
+
+If you encounter any issues or have further questions, please feel free to ask for assistance.
+
+Best regards,
+
+Dobromir Atanasov
+.NET Junior Developer Support Engineer 
+Progress
