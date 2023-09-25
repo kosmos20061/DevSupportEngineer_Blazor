@@ -1,0 +1,5 @@
+I have choose Blazor Server App for this task. 
+As far as i could find out from all the videos and documents i have read this is the most suitаble for the project.
+VS will do all the requests response jobs and provide the results to the user.
+I could not get any better the visual part of Task 1, i couldn`t get much deep in Blazor Frame work and i did not use any of the Telerik components - i don`t understand how.
+So Task 1 i manage only to visualise the given data as a button on the Main menu.
